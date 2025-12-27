@@ -5,9 +5,14 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import PublicLayout from './layouts/PublicLayout';
 import DashboardLayout from './layouts/DashboardLayout';
 
-// Pages
+// Public Pages
 import Landing from './pages/public/Landing';
 import Login from './pages/public/Login';
+import Register from './pages/public/Register';
+import About from './pages/public/About';
+import Contact from './pages/public/Contact';
+
+// Dashboard Pages
 import Overview from './pages/dashboard/Overview';
 import Scan from './pages/dashboard/Scan';
 import History from './pages/dashboard/History';
@@ -21,6 +26,9 @@ const App = () => {
         <Route path="/" element={<PublicLayout />}>
           <Route index element={<Landing />} />
           <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
 
         {/* Dashboard Routes */}
