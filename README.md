@@ -2,6 +2,7 @@
   <img src="frontend/public/logo.png" alt="VeriScan Logo" width="150" />
   <h1>🛡️ VeriScan</h1>
   <p><strong>A Comprehensive Security & Academic Verification Platform</strong></p>
+  <p><em>Final Year Project — BS Software Engineering</em><br/><em>Under the supervision of <strong>Ms. Sidra Shahid</strong></em></p>
   
   <p>
     <img src="https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge&logo=react" alt="React" />
