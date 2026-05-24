@@ -1,67 +1,102 @@
-# VeriScan
+<div align="center">
+  <img src="frontend/public/logo.png" alt="VeriScan Logo" width="150" />
+  <h1>🛡️ VeriScan</h1>
+  <p><strong>A Comprehensive Security & Academic Verification Platform</strong></p>
+  
+  <p>
+    <img src="https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge&logo=react" alt="React" />
+    <img src="https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi" alt="FastAPI" />
+    <img src="https://img.shields.io/badge/Database-Firebase-FFCA28?style=for-the-badge&logo=firebase" alt="Firebase" />
+    <img src="https://img.shields.io/badge/Styling-TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind" />
+  </p>
+</div>
 
-VeriScan is a comprehensive security and academic verification platform designed to detect threats and verify the authenticity of digital content. It provides a powerful suite of tools including deepfake detection, phishing analysis, plagiarism checking, metadata forensics, and malicious URL scanning, backed by blockchain technology for secure logging.
+<br/>
 
-## Features
+## 🌟 Overview
 
-- **Deepfake Scanner:** Analyzes media files to detect AI-generated or manipulated content.
-- **Phishing Detector:** Scans texts and emails for social engineering and phishing attempts.
-- **URL Scanner:** Evaluates links for malicious intent or security risks.
-- **Plagiarism Detector:** Checks academic and professional documents for unoriginal content.
-- **Metadata Forensics:** Extracts and analyzes hidden metadata from files for security verification.
-- **Blockchain Logging:** Ensures immutable and transparent logging of verification results.
+**VeriScan** is an advanced, all-in-one verification suite designed to protect you against modern digital threats. By combining cutting-edge AI detectors with an immutable blockchain logging system, VeriScan ensures the authenticity of digital media, links, and documents.
 
-## Tech Stack
+Whether you're verifying an academic paper or scanning a suspicious email for phishing links, VeriScan has you covered!
 
-### Frontend
-- **Framework:** React (via Vite)
-- **Styling:** Tailwind CSS, Framer Motion (for animations)
-- **Routing:** React Router DOM
-- **Authentication/Database:** Firebase
-- **Icons:** React Icons
+---
 
-### Backend
-- **Framework:** FastAPI (Python)
-- **Architecture:** Modular service-based architecture
-- **Detectors:** Built-in AI, Media, Metadata, Phishing, Plagiarism, and URL detection services
-- **Integration:** CORS enabled for seamless connection with the React frontend
+## 🚀 Key Features
 
-## Getting Started
+*   🎭 **Deepfake Scanner** — Detects AI-generated manipulation in media files.
+*   🎣 **Phishing Detector** — Scans emails and text for social engineering attempts.
+*   🔗 **Malicious URL Scanner** — Evaluates links to ensure they are safe to click.
+*   📝 **Plagiarism Checker** — Cross-references academic and professional documents for unoriginal content.
+*   🕵️ **Metadata Forensics** — Extracts hidden metadata and EXIF data from files to reveal their true origins.
+*   ⛓️ **Blockchain Logging** — All verifications are securely logged to an immutable ledger for absolute transparency.
+
+---
+
+## 🏗️ Architecture
+
+Below is a high-level overview of VeriScan's system architecture:
+
+<div align="center">
+  <img src="diagrams_hd/architecture_diagram.png" alt="VeriScan Architecture Diagram" width="800" />
+</div>
+
+---
+
+## 💻 Tech Stack
+
+| Domain | Technologies |
+| :--- | :--- |
+| **Frontend** | React 19, Vite, Tailwind CSS, Framer Motion, React Router |
+| **Backend** | Python 3.10+, FastAPI, Modular Service Architecture |
+| **Database & Auth** | Firebase |
+| **Integrations** | Blockchain Services, AI Detection Models |
+
+---
+
+## 🛠️ Getting Started
+
+Follow these steps to get a local copy up and running.
 
 ### Prerequisites
-- Node.js
-- Python (3.10+)
 
-### Frontend Setup
+*   **Node.js** (v18 or higher)
+*   **Python** (v3.10 or higher)
 
-1. Navigate to the `frontend` directory:
-   ```bash
-   cd frontend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
-   The frontend will run on `http://localhost:5173`.
+### 1️⃣ Frontend Setup
 
-### Backend Setup
+```bash
+# Navigate to the frontend directory
+cd frontend
 
-1. Navigate to the `backend` directory:
-   ```bash
-   cd backend
-   ```
-2. Install the required Python packages:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the FastAPI server:
-   ```bash
-   fastapi dev main.py
-   # or
-   # uvicorn main:app --reload
-   ```
-   The backend API will run on `http://localhost:8000`.
+# Install the dependencies
+npm install
+
+# Start the Vite development server
+npm run dev
+```
+> The frontend will be available at `http://localhost:5173` ✨
+
+### 2️⃣ Backend Setup
+
+```bash
+# Navigate to the backend directory
+cd backend
+
+# Install python dependencies
+pip install -r requirements.txt
+
+# Start the FastAPI server
+fastapi dev main.py
+# or uvicorn main:app --reload
+```
+> The backend API will be available at `http://localhost:8000` 🚀
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+<div align="center">
+  <sub>Built with ❤️ for Security & Integrity</sub>
+</div>
