@@ -2,7 +2,7 @@
   <img src="frontend/public/logo.png" alt="VeriScan Logo" width="150" />
   <h1>🛡️ VeriScan</h1>
   <p><strong>A Comprehensive Security & Academic Verification Platform</strong></p>
-  <p><em>Final Year Project — BS Software Engineering</em><br/><em>Under the supervision of <strong>Ms. Sidra Shahid</strong></em></p>
+  <p><em>Final Year Project  BS Software Engineering</em><br/><em>Under the supervision of <strong>Ms. Sidra Shahid</strong></em></p>
   
   <p>
     <img src="https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge&logo=react" alt="React" />
@@ -30,16 +30,6 @@ Whether you're verifying an academic paper or scanning a suspicious email for ph
 *   📝 **Plagiarism Checker** — Cross-references academic and professional documents for unoriginal content.
 *   🕵️ **Metadata Forensics** — Extracts hidden metadata and EXIF data from files to reveal their true origins.
 *   ⛓️ **Blockchain Logging** — All verifications are securely logged to an immutable ledger for absolute transparency.
-
----
-
-## 🏗️ Architecture
-
-Below is a high-level overview of VeriScan's system architecture:
-
-<div align="center">
-  <img src="diagrams_hd/architecture_diagram.png" alt="VeriScan Architecture Diagram" width="800" />
-</div>
 
 ---
 
