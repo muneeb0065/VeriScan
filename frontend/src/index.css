@@ -1,0 +1,66 @@
+/* ============================================
+ * VeriScan — Global Styles
+ * 
+ * This file is the FIRST CSS loaded by the app.
+ * It imports Google Fonts, activates Tailwind,
+ * defines custom brand colors, and adds utilities.
+ * ============================================ */
+
+/* Google Fonts — Inter (modern, clean typeface) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* Activate Tailwind CSS v4 */
+@import "tailwindcss";
+
+/* ============================================
+ * CUSTOM BRAND COLORS — Tailwind v4 way
+ * 
+ * Tailwind v4 uses @theme to register custom tokens.
+ * This makes classes like bg-veriscan-purple, text-veriscan-teal etc. work.
+ * Without this, those classes render as black/invisible.
+ * ============================================ */
+@theme {
+  --color-veriscan-purple: #7c3aed;
+  --color-veriscan-teal: #0d9488;
+  --color-veriscan-dark: #0f172a;
+  --color-veriscan-light: #f8fafc;
+}
+
+/* ============================================
+ * BASE STYLES
+ * ============================================ */
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Dot grid background — ONLY for public pages (not dashboard) */
+.public-bg-grid {
+  background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ============================================
+ * UTILITIES
+ * ============================================ */
+
+/* Hide scrollbar but still allow scrolling (used in tab nav) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth scroll for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom text selection color (purple tint) */
+::selection {
+  background-color: rgba(124, 58, 237, 0.2);
+  color: #1e293b;
+}

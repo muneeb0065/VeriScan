@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>VeriScan | Digital Forensics Platform</title>
+
+        <!-- Reveal.js Core CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+        <!-- Light Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/simple.min.css">
+        
+        <!-- Premium Google Fonts (Outfit) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+        
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+        <!-- Custom Light Styling matching VeriScan brand -->
+        <style>
+            :root {
+                --r-main-font: 'Outfit', sans-serif;
+                --r-heading-font: 'Outfit', sans-serif;
+                --r-heading-text-transform: none;
+                --veriscan-purple: #8b5cf6;
+                --veriscan-teal: #14b8a6;
+                --veriscan-text-dark: #1e293b;
+                --veriscan-text-muted: #64748b;
+            }
+            
+            /* Background definition */
+            .reveal {
+                font-family: 'Outfit', sans-serif;
+                color: var(--veriscan-text-dark);
+            }
+            .reveal .slide-background {
+                background: radial-gradient(circle at center, #ffffff 0%, #f8fafc 100%);
+            }
+            
+            /* Heading Styles */
+            .reveal h1, .reveal h2, .reveal h3 {
+                font-family: 'Outfit', sans-serif;
+                font-weight: 800;
+                background: linear-gradient(135deg, #6d28d9, #0d9488);
+                -webkit-background-clip: text; background-clip: text;
+                -webkit-text-fill-color: transparent;
+                margin-bottom: 25px;
+                line-height: 1.1;
+                letter-spacing: -0.03em;
+            }
+            .reveal h1 { font-size: 4.5rem; text-shadow: 0 10px 30px rgba(139, 92, 246, 0.15); }
+            .reveal h2 { font-size: 3.2rem; }
+            .reveal h3 { font-size: 2.2rem; }
+            
+            /* Body Text */
+            .reveal p { 
+                color: var(--veriscan-text-muted); 
+                font-size: 1.6rem; 
+                line-height: 1.6; 
+                font-weight: 400;
+            }
+            .reveal li { 
+                color: var(--veriscan-text-dark); 
+                font-size: 1.5rem; 
+                margin-bottom: 18px; 
+                font-weight: 400;
+            }
+            
+            .grid-2 {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 35px;
+                margin-top: 35px;
+            }
+            
+            /* Feature Cards */
+            .feature-box {
+                background: #ffffff;
+                border: 1px solid rgba(139, 92, 246, 0.15);
+                border-radius: 24px;
+                padding: 40px 30px;
+                text-align: left;
+                box-shadow: 0 15px 35px rgba(0,0,0,0.04), 0 5px 15px rgba(139, 92, 246, 0.05);
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            .feature-box:hover {
+                transform: translateY(-8px);
+                border-color: rgba(20, 184, 166, 0.4);
+                box-shadow: 0 25px 40px rgba(0,0,0,0.08), 0 10px 20px rgba(20, 184, 166, 0.1);
+            }
+            
+            .feature-icon {
+                font-size: 2.8rem;
+                margin-bottom: 20px;
+                background: linear-gradient(135deg, var(--veriscan-purple), var(--veriscan-teal));
+                -webkit-background-clip: text; background-clip: text;
+                -webkit-text-fill-color: transparent;
+                display: inline-block;
+            }
+            
+            .feature-box h4 {
+                background: none;
+                -webkit-text-fill-color: var(--veriscan-text-dark);
+                color: var(--veriscan-text-dark);
+                font-size: 1.7rem;
+                font-weight: 800;
+                margin-bottom: 12px;
+                letter-spacing: -0.01em;
+            }
+            .feature-box p {
+                font-size: 1.2rem;
+                margin: 0;
+                color: var(--veriscan-text-muted);
+            }
+            
+            .stack-wrap {
+                margin-top: 40px;
+            }
+            .stack-pill {
+                display: inline-flex;
+                align-items: center;
+                gap: 12px;
+                padding: 14px 30px;
+                border-radius: 50px;
+                margin: 10px;
+                font-size: 1.3rem;
+                background: #ffffff;
+                border: 2px solid rgba(139, 92, 246, 0.15);
+                color: var(--veriscan-text-dark);
+                font-weight: 600;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+            }
+            
+            .highlight {
+                color: #0d9488;
+                font-weight: 800;
+                background: rgba(20, 184, 166, 0.1);
+                padding: 2px 10px;
+                border-radius: 8px;
+            }
+            
+            /* Logo Orb */
+            .logo-orb {
+                width: 90px;
+                height: 90px;
+                border-radius: 24px;
+                background: linear-gradient(135deg, var(--veriscan-purple), var(--veriscan-teal));
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 3rem;
+                font-weight: 900;
+                margin-bottom: 25px;
+                box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
+            }
+            
+            .light-accent-text {
+                font-size: 1.9rem !important; 
+                font-weight: 600 !important; 
+                color: var(--veriscan-text-dark) !important;
+            }
+            .subtitle-text {
+                font-size: 1.2rem !important; 
+                color: #94a3b8 !important; 
+                font-weight: 600 !important; 
+                letter-spacing: 0.1em; 
+                text-transform: uppercase;
+            }
+            
+            /* Print Specific Overrides to fix Alignment */
+            @media print {
+                .reveal .slides {
+                    position: static !important;
+                    width: auto !important;
+                    height: auto !important;
+                    transform: none !important;
+                }
+                .feature-box {
+                    box-shadow: none !important;
+                    page-break-inside: avoid !important;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+
+                <!-- Slide 1: Title -->
+                <section>
+                    <div class="logo-orb">V</div>
+                    <h1>VeriScan</h1>
+                    <p class="light-accent-text">Blockchain-Integrated Digital Forensics Platform</p>
+                    <p style="margin-top: 35px;" class="subtitle-text">Final Year Project Presentation</p>
+                </section>
+
+                <!-- Slide 2: The Problem -->
+                <section>
+                    <h2>The Digital Problem</h2>
+                    <p style="text-align: left; margin-bottom: 35px;">With the rise of AI tools and cyber attacks, it is getting harder to tell what is real and what is fake online.</p>
+                    
+                    <div class="grid-2">
+                        <div class="feature-box fragment fade-up">
+                            <i class="fa-solid fa-graduation-cap feature-icon"></i>
+                            <h4>AI vs. Original Content</h4>
+                            <p>It is increasingly difficult to determine if content is generated by AI or is original. For academic purposes, this creates a high risk of undetected plagiarism.</p>
+                        </div>
+                        <div class="feature-box fragment fade-up" data-fragment-index="1">
+                            <i class="fa-solid fa-shield-halved feature-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444); -webkit-background-clip: text; background-clip: text;"></i>
+                            <h4>Security Risks</h4>
+                            <p>Fake videos (deepfakes), scam web links, and hidden viruses are tricking people easily every day.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 3: The Solution -->
+                <section>
+                    <h2>The Solution: VeriScan</h2>
+                    <p>A single platform with two different modes to help people find fake and dangerous content.</p>
+                    
+                    <div class="grid-2">
+                        <div class="feature-box fragment fade-right">
+                            <i class="fa-solid fa-book-open feature-icon" style="background: linear-gradient(135deg, #8b5cf6, #c084fc); -webkit-background-clip: text; background-clip: text;"></i>
+                            <h4>Academic Mode</h4>
+                            <p>Simple tools for teachers to quickly scan student work to see if it was written by AI or copied from the internet.</p>
+                        </div>
+                        <div class="feature-box fragment fade-left">
+                            <i class="fa-solid fa-fingerprint feature-icon" style="background: linear-gradient(135deg, #14b8a6, #2dd4bf); -webkit-background-clip: text; background-clip: text;"></i>
+                            <h4>Security Mode</h4>
+                            <p>Advanced tools to spot fake videos, check dangerous web links, and find hidden information in files.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 4: Real-Time Toggle Architecture -->
+                <section data-auto-animate>
+                    <h2>Smart App Design</h2>
+                    <p style="margin-bottom: 40px;">Why build two different apps when everything can be in <span class="highlight">one place</span>?</p>
+                    
+                    <ul style="text-align: left; display: inline-block;">
+                        <li class="fragment" style="padding: 10px 0;"><i class="fa-solid fa-bolt" style="color: #f59e0b; margin-right: 15px;"></i><strong>Easy Switching:</strong> Change from Academic Mode to Security Mode with just one click.</li>
+                        <li class="fragment" style="padding: 10px 0;"><i class="fa-solid fa-palette" style="color: #8b5cf6; margin-right: 15px;"></i><strong>Visually Appealing UI:</strong> The app turns Purple for school tools and Green for security tools so you always know where you are.</li>
+                        <li class="fragment" style="padding: 10px 0;"><i class="fa-solid fa-route" style="color: #14b8a6; margin-right: 15px;"></i><strong>Perfect Navigation:</strong> The menu automatically changes to show only the tools you need right now.</li>
+                    </ul>
+                </section>
+
+                <!-- Slide 5: The Blockchain Advantage -->
+                <section>
+                    <h2>Why Use <b style="color:var(--veriscan-teal)">Blockchain</b>?</h2>
+                    <p>We need our results to be perfectly secure. Once data is saved on the blockchain, it cannot be changed.</p>
+                    
+                    <div class="grid-2">
+                        <div class="feature-box fragment fade-up">
+                            <i class="fa-solid fa-link feature-icon" style="background: linear-gradient(135deg, #3b82f6, #60a5fa); -webkit-background-clip: text; background-clip: text;"></i>
+                            <h4>Permanent Records</h4>
+                            <p>Every scan result, threat detected, or copied work is saved properly so it can never be deleted.</p>
+                        </div>
+                        <div class="feature-box fragment fade-up" data-fragment-index="1">
+                            <i class="fa-solid fa-file-signature feature-icon" style="background: linear-gradient(135deg, #f59e0b, #fbbf24); -webkit-background-clip: text; background-clip: text;"></i>
+                            <h4>Proof of Originality</h4>
+                            <p>Safe documents get a special digital stamp. If anyone tries to change the document later, the stamp breaks to warn everyone.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 6: Tech Stack -->
+                <section>
+                    <h2>Technology Behind The App</h2>
+                    <p style="margin-bottom: 30px;">Built using fast and modern programming tools.</p>
+                    
+                    <div class="stack-wrap">
+                        <div class="fragment fade-up" style="margin-bottom: 25px;">
+                            <span class="subtitle-text" style="display: block; margin-bottom: 10px;">App Interface (Frontend)</span>
+                            <span class="stack-pill"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="24" alt="react"> React</span>
+                            <span class="stack-pill"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" width="24" alt="tailwind"> Tailwind CSS</span>
+                            <span class="stack-pill"><i class="fa-solid fa-wand-magic-sparkles" style="color: #6366f1;"></i> Framer Motion</span>
+                        </div>
+                        
+                        <div class="fragment fade-up" data-fragment-index="1" style="margin-bottom: 25px;">
+                            <span class="subtitle-text" style="display: block; margin-bottom: 10px;">Server & AI Brain (Backend)</span>
+                            <span class="stack-pill" style="border-color: rgba(20, 184, 166, 0.3);"><i class="fa-solid fa-bolt" style="color: #14b8a6;"></i> FastAPI (Python)</span>
+                        </div>
+
+                        <div class="fragment fade-up" data-fragment-index="2">
+                            <span class="subtitle-text" style="display: block; margin-bottom: 10px;">User Logins (Database)</span>
+                            <span class="stack-pill" style="border-color: rgba(245, 158, 11, 0.3);"><i class="fa-solid fa-fire" style="color: #f59e0b;"></i> Firebase Auth</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 7: Q&A -->
+                <section>
+                    <div class="logo-orb" style="width: 120px; height: 120px; font-size: 3.5rem;">V</div>
+                    <h1 style="margin-bottom: 15px;">Thank You</h1>
+                    <p class="light-accent-text" style="margin-bottom: 0;">Any Questions?</p>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Reveal.js Core JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
+        
+        <!-- Reveal.js Configuration -->
+        <script>
+            Reveal.initialize({
+                width: 1100,
+                height: 700,
+                margin: 0.1,
+                minScale: 0.2,
+                maxScale: 2.0,
+                hash: true,
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+                backgroundTransition: 'fade',
+                slideNumber: 'c/t',
+                center: true,
+                controlsTutorial: true,
+                pdfSeparateFragments: false,
+                pdfMaxPagesPerSlide: 1
+            });
+        </script>
+    </body>
+</html>

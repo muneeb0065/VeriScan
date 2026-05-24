@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+requests
+pydantic
+pydantic-settings
+python-dotenv
+firebase-admin
+PyPDF2
+python-multipart
+textstat
+wikipedia
